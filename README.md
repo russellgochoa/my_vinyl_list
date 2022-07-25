@@ -49,11 +49,11 @@ When you're shopping for records, remembering what you've already bought is a re
 
 #### 'My Vinyl List ERD'
 
-![ERD](https://imgur.com/4uTtpbB)
+![ERD](https://imgur.com/a/7vH7Z9X)
 
 #### 'My Vinyl List CHD'
 
-## ![CHD](https://imgur.com/5yPCjcG)
+#### ![CHD](https://imgur.com/5yPCjcG)
 
 ### **_Future Updates_**
 
