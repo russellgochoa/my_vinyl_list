@@ -17,6 +17,18 @@ app.get('/records', async (req, res) => {
   res.json(records)
 })
 
+app.get('/records/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const record = await Record.findById(id)
+    if (!record) throw Error('Record not found')
+    res.json(record)
+  } catch (e) {
+    console.log(e)
+    res.send('Record not found!')
+  }
+})
+
 // app.get('/', (req, res) => {
 //   res.send('This is root!')
 // })
