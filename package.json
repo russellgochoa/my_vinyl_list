@@ -1,0 +1,22 @@
+{
+  "name": "my_vinyl_list",
+  "version": "1.0.0",
+  "description": "## **Date: 7/23/2022**",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russellgochoa/my_vinyl_list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/russellgochoa/my_vinyl_list/issues"
+  },
+  "homepage": "https://github.com/russellgochoa/my_vinyl_list#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
