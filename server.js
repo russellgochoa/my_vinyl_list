@@ -29,6 +29,11 @@ app.get('/records/:id', async (req, res) => {
   }
 })
 
+app.post('/hello', (request, response) => {
+  console.log(`You've sent a post request to the /hello endpoint.`)
+  response.send({ msg: 'Thanks for the post!' })
+})
+
 // app.get('/', (req, res) => {
 //   res.send('This is root!')
 // })

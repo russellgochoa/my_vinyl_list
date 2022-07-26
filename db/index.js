@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 mongoose
   .connect('mongodb://127.0.0.1:27017/recordsDatabase') // if we don't have a local database named "productsDatabase" one will be created upon a successful connection
