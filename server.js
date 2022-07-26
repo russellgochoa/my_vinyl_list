@@ -35,6 +35,10 @@ app.post('/records', (request, response) => {
   response.send({ msg: 'Thanks for the post!' })
 })
 
+// app.put('/records/update/:name', (req, res) => {
+//  res.send(`Record ${req.params.name} was updated`)
+// })
+
 // app.get('/', (req, res) => {
 //   res.send('This is root!')
 // })
