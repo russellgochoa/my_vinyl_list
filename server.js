@@ -30,13 +30,18 @@ app.get('/records/:id', async (req, res) => {
   }
 })
 
-app.post('/records', (request, response) => {
-  console.log(`You've sent a post request to the /hello endpoint.`)
-  response.send({ msg: 'Thanks for the post!' })
+// app.post('/records', (req, res) => {
+//   console.log(`You've sent a post request to the /hello endpoint.`)
+//   res.send({ msg: 'Thanks for the post!' })
+// })
+
+app.post('/records', async (req, res) => {
+  const records = await Record.find({})
+  res.json(records)
 })
 
 // app.put('/records/update/:name', (req, res) => {
-//  res.send(`Record ${req.params.name} was updated`)
+//   res.send(`Record ${req.params.name} was updated`)
 // })
 
 // app.get('/', (req, res) => {
