@@ -1,4 +1,4 @@
-const Record = require('../models')
+const { Record } = require('../models')
 
 const createRecord = async (req, res) => {
   try {
