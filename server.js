@@ -12,6 +12,7 @@ app.use(logger('dev'))
 
 const { Record } = require('./models')
 
+// ROUTES
 app.get('/records', async (req, res) => {
   const records = await Record.find({})
   res.json(records)
@@ -29,7 +30,7 @@ app.get('/records/:id', async (req, res) => {
   }
 })
 
-app.post('/hello', (request, response) => {
+app.post('/records', (request, response) => {
   console.log(`You've sent a post request to the /hello endpoint.`)
   response.send({ msg: 'Thanks for the post!' })
 })
