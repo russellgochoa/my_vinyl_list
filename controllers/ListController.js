@@ -1,27 +1,27 @@
-const { Record } = require('../models')
+const { List } = require('../models')
 
-const createRecord = async (req, res) => {
+const createList = async (req, res) => {
   try {
-    const record = await new Record(req.body)
-    await record.save()
+    const list = await new List(req.body)
+    await list.save()
     return res.status(201).json({
-      record
+      list
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
 }
 
-const getAllRecords = async (req, res) => {
+const getAllLists = async (req, res) => {
   try {
-    const records = await Record.find()
-    return res.status(200).json({ records })
+    const lists = await List.find()
+    return res.status(200).json({ lists })
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
 module.exports = {
-  createRecord,
-  getAllRecords
+  createList,
+  getAllLists
 }

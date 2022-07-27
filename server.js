@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
 const { Record } = require('./models')
+const { List } = require('./models')
 
 // CONTROLLERS
 const {
@@ -20,9 +21,15 @@ const {
   getAllRecords
 } = require('./controllers/RecordController')
 
+const { getAllLists } = require('./controllers/ListController')
+
 // const RecordController = require('./controllers/RecordController')
 
 // ROUTES
+
+// GET Lists
+
+app.get('/lists', getAllLists)
 
 // GET records
 
