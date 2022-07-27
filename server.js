@@ -44,7 +44,9 @@ app.get('/records/:id', async (req, res) => {
 //   res.send('This is root!')
 // })
 
-// POST create new record
+// POST (create new record)
+
+app.post('/records', createRecord)
 
 // app.post('/records', async (req, res) => {
 //   try {
@@ -60,14 +62,12 @@ app.get('/records/:id', async (req, res) => {
 //   }
 // })
 
-app.post('/records', createRecord)
-
 // app.post('/records', (req, res) => {
 //   console.log(`You've sent a post request to the /hello endpoint.`)
 //   res.send({ msg: 'Thanks for the post!' })
 // })
 
-// PUT update an existing record
+// PUT (update an existing record)
 
 app.put('/records/:id', async (req, res) => {
   try {
@@ -86,10 +86,6 @@ app.put('/records/:id', async (req, res) => {
     res.send('Record not found!')
   }
 })
-
-// app.put('/records', (req, res) => {
-//   res.send(`User profile with the username of ${req.params.id} was updated`)
-// })
 
 // DELETE an existing record
 
