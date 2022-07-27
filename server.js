@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 
 const { Record } = require('./models')
-const { createRecord } = require('./controllers/RecordController')
+
 // CONTROLLERS
+const { createRecord } = require('./controllers/RecordController')
+
 // const RecordController = require('./controllers/RecordController')
 
 // ROUTES
@@ -89,12 +91,19 @@ app.put('/records/:id', async (req, res) => {
 //   res.send(`User profile with the username of ${req.params.id} was updated`)
 // })
 
-// DELETE an existing records
+// DELETE an existing record
 
-app.delete('/tacos', (req, res) => {
-  res.send({
-    msg: `I deleted the ${req.query.type} with an id of ${req.query.tacoId}`
-  })
+app.delete('/records/:id', async (req, res) => {
+  try {
+    const _id = req.params.id
+    const deleted = await Record.findByIdAndDelete(_id)
+    if (deleted) {
+      return res.status(200).send('Record deleted')
+    }
+    throw new Error('Record not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
 })
 
 app.listen(PORT, () => {
