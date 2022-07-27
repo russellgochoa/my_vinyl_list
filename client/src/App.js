@@ -1,9 +1,16 @@
-import Button from './components/Button'
+// App.js
+
+import React, { useState } from 'react'
+import boatsArray from './data/boats'
+import './styles/App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import Listings from './components/Listings'
 
 const App = () => {
   return (
     <div>
-      <Button />
+      <Listings />
     </div>
   )
 }
