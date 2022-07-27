@@ -15,7 +15,10 @@ app.use(logger('dev'))
 const { Record } = require('./models')
 
 // CONTROLLERS
-const { createRecord } = require('./controllers/RecordController')
+const {
+  createRecord,
+  getAllRecords
+} = require('./controllers/RecordController')
 
 // const RecordController = require('./controllers/RecordController')
 
@@ -23,10 +26,12 @@ const { createRecord } = require('./controllers/RecordController')
 
 // GET records
 
-app.get('/records', async (req, res) => {
-  const records = await Record.find({})
-  res.json(records)
-})
+app.get('/records', getAllRecords)
+
+// app.get('/records', async (req, res) => {
+//   const records = await Record.find({})
+//   res.json(records)
+// })
 
 app.get('/records/:id', async (req, res) => {
   try {
