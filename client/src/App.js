@@ -1,16 +1,20 @@
 // App.js
 
 import React, { useState } from 'react'
-import boatsArray from './data/boats'
-import './styles/App.css'
 import { Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
 import Listings from './components/Listings'
 
 const App = () => {
   return (
-    <div>
-      <Listings />
+    <div className="App">
+      {/* <header> Import Nav here </header> */}
+      <main>
+        <Routes>
+          <Route path="/" element={<Listings />} />
+          <Route path="listings" element={<Listings />} />
+          <Route path="listings" element={<Listings records={records} />} />
+        </Routes>
+      </main>
     </div>
   )
 }
