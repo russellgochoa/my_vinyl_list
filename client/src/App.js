@@ -3,18 +3,19 @@
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Listings from './components/Listings'
+import RecordDetails from './components/RecordDetails'
 
 const App = () => {
   return (
     <div className="App">
-      {/* <header> Import Nav here </header> */}
-      <main>
-        <Routes>
-          <Route path="/" element={<Listings />} />
-          <Route path="listings" element={<Listings />} />
-          <Route path="listings" element={<Listings records={records} />} />
-        </Routes>
-      </main>
+      <header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Listings />} />
+            <Route path=":id" element={<RecordDetails />} />
+          </Routes>
+        </main>
+      </header>
     </div>
   )
 }

@@ -36,9 +36,9 @@ const RecordForm = (props) => {
         />
         <input
           type="text"
-          value={newRecord.img}
+          value={newRecord.image}
           onChange={props.handleChange}
-          name={'img'}
+          name={'image'}
           placeholder={'image'}
         />
         <button>Add Record</button>

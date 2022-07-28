@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
@@ -13,6 +14,11 @@ const Listings = () => {
     getRecords()
   }, [])
 
+  let navigate = useNavigate()
+  const showRecord = (record) => {
+    navigate(`${record._id}`)
+  }
+
   return (
     <div>
       <div className="records">
@@ -20,7 +26,7 @@ const Listings = () => {
         <section className="container-grid">
           {records
             ? records.map((record) => (
-                <div>
+                <div onClick={() => showRecord(record)} key={record.id}>
                   {record.title}
                   {record.artist}
                   {record.description}

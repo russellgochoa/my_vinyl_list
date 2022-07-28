@@ -87,7 +87,8 @@ app.put('/records/:id', async (req, res) => {
     const record = await Record.findByIdAndUpdate(
       _id,
       {
-        description: req.body.description
+        description: req.body.description,
+        image: req.body.image
       },
       { new: true }
     )
