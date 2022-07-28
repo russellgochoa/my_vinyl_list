@@ -4,6 +4,13 @@ import { useState, useEffect } from 'react'
 
 const Listings = () => {
   const [records, setRecords] = useState([])
+  const initialState = {
+    title: '',
+    artist: '',
+    description: '',
+    image: ''
+  }
+  const [formState, setFormState] = useState(initialState)
 
   useEffect(() => {
     const getRecords = async () => {
@@ -19,9 +26,30 @@ const Listings = () => {
     navigate(`listings/${record._id}`)
   }
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(formState)
+    setFormState(initialState)
+  }
+
   return (
     <div>
       <div className="records">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="artist">Artist:</label>
+          <input type="text" id="artist" />
+          <label htmlFor="title">Title:</label>
+          <input type="text" id="title" />
+          <label htmlFor="description">Description:</label>
+          <input type="text" id="description" />
+          <label htmlFor="image">Image:</label>
+          <input type="text" id="image" />
+          <button type="submit">Add Record</button>
+        </form>
         <h2>Records</h2>
         <section className="container-grid">
           {records
