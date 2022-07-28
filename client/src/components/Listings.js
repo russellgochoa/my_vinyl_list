@@ -26,7 +26,7 @@ const Listings = () => {
         <section className="container-grid">
           {records
             ? records.map((record) => (
-                <div onClick={() => showRecord(record)} key={record.id}>
+                <div onClick={() => showRecord(record)} key={record._id}>
                   {record.title}
                   {record.artist}
                   {record.description}

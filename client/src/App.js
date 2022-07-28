@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Listings from './components/Listings'
 import RecordDetails from './components/RecordDetails'
+import './App.css'
 
 const App = () => {
   return (

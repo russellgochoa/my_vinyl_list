@@ -11,8 +11,8 @@ const RecordDetails = (props) => {
   useEffect(() => {
     let selectedRecord = async () => {
       let res = await axios.get(`http://localhost:3001/records/:id`)
-      console.log(res)
       selectedRecord(res.data.records)
+      console.log(res)
     }
     setRecords()
   }, [])
@@ -37,8 +37,9 @@ const RecordDetails = (props) => {
       </div>
       <div className="info-wrapper">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h3>Title: ${records.price}</h3>
+          <h3>Title: {records.id}</h3>
           <h3>Artist: {records.id}</h3>
+          <h3>Description: {records.id}</h3>
         </div>
         <p>{records.description}</p>
       </div>

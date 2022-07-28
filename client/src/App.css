@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.listings {
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
