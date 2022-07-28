@@ -36,10 +36,9 @@ const RecordDetails = (props) => {
         </div>
       </div>
       <div className="info-wrapper">
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <h3>Title: {records.title}</h3>
           <h3>Artist: {records.artist}</h3>
-          <h3>Image: {records.image}</h3>
         </div>
         <p>{records.description}</p>
       </div>
