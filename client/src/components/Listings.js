@@ -26,28 +26,28 @@ const Listings = () => {
     navigate(`listings/${record._id}`)
   }
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
-  }
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(formState)
+    let res = await axios.post('http://localhost:3001/records', formState)
+    console.log(res)
     setFormState(initialState)
   }
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
   return (
     <div>
       <div className="records">
         <form onSubmit={handleSubmit}>
           <label htmlFor="artist">Artist:</label>
-          <input type="text" id="artist" />
+          <input type="text" id="artist" onChange={handleChange} />
           <label htmlFor="title">Title:</label>
-          <input type="text" id="title" />
+          <input type="text" id="title" onChange={handleChange} />
           <label htmlFor="description">Description:</label>
-          <input type="text" id="description" />
+          <input type="text" id="description" onChange={handleChange} />
           <label htmlFor="image">Image:</label>
-          <input type="text" id="image" />
+          <input type="text" id="image" onChange={handleChange} />
           <button type="submit">Add Record</button>
         </form>
         <h2>Records</h2>
