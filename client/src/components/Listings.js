@@ -16,7 +16,7 @@ const Listings = () => {
 
   let navigate = useNavigate()
   const showRecord = (record) => {
-    navigate(`${record._id}`)
+    navigate(`listings/${record._id}`)
   }
 
   return (

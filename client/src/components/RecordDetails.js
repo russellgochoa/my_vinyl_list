@@ -4,17 +4,17 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const RecordDetails = (props) => {
-  const [records, setRecords] = useState('')
+  const [records, setRecord] = useState('')
 
   let { id } = useParams()
 
   useEffect(() => {
     let selectedRecord = async () => {
-      let res = await axios.get(`http://localhost:3001/records/:id`)
-      selectedRecord(res.data.records)
+      let res = await axios.get(`http://localhost:3001/records/${id}`)
+      setRecord(res.data)
       console.log(res)
     }
-    setRecords()
+    selectedRecord()
   }, [])
 
   //   setRecords(selectedRecord)
@@ -37,9 +37,9 @@ const RecordDetails = (props) => {
       </div>
       <div className="info-wrapper">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h3>Title: {records.id}</h3>
-          <h3>Artist: {records.id}</h3>
-          <h3>Description: {records.id}</h3>
+          <h3>Title: {records.title}</h3>
+          <h3>Artist: {records.artist}</h3>
+          <h3>Image: {records.image}</h3>
         </div>
         <p>{records.description}</p>
       </div>
