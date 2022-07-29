@@ -84,14 +84,7 @@ app.post('/records', createRecord)
 app.put('/records/:id', async (req, res) => {
   try {
     const _id = req.params.id
-    const record = await Record.findByIdAndUpdate(
-      _id,
-      {
-        description: req.body.description,
-        image: req.body.image
-      },
-      { new: true }
-    )
+    const record = await Record.findByIdAndUpdate(_id, req.body, { new: true })
     if (!record) throw Error('Record not found')
     res.json(record)
   } catch (e) {

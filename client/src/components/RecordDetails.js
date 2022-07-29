@@ -34,20 +34,19 @@ const RecordDetails = (props) => {
   }, [])
 
   //DELETE one record
-  // useEffect(() => {
-  //   const deleteRecord = async () => {
-  //     const res = await axios.delete(`http://localhost:3001/records/${id}`)
-  //     deleteRecord(res.data.records)
-  //     console.log(res)
-  //   }
-  //   deleteRecord()
-  // }, [])
+  useEffect(() => {
+    const deleteRecord = async () => {
+      const res = await axios.delete(`http://localhost:3001/records/${id}`)
+      deleteRecord(res.data.records)
+      console.log(res)
+    }
+  }, [])
 
   //PUT update one record
   const handleSubmit = async (event) => {
     event.preventDefault()
     let res = await axios.put(`http://localhost:3001/records/${id}`, formState)
-    // console.log(res)
+    console.log(res.data)
     setFormState(initialState)
   }
 
