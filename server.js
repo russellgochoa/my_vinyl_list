@@ -11,6 +11,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
+app.use(express.static(`${__dirname}/client/build`))
 
 const { Record } = require('./models')
 const { List } = require('./models')
@@ -108,6 +109,9 @@ app.delete('/records/:id', async (req, res) => {
   }
 })
 
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
+})
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
