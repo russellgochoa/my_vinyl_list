@@ -57,8 +57,10 @@ When you're shopping for records, remembering what you've already bought is a re
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
-- [ ] Future Update 2
+#### **_Please see Trello Board for specific updates_**
+
+- [x] Back End CRUD functioning
+- [x] Front End CRUD functioning
 - [x] Submit documents for Project 2 Approval
 
 ---
