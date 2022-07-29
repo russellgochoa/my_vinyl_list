@@ -28,19 +28,18 @@ const RecordDetails = (props) => {
     let selectedRecord = async () => {
       let res = await axios.get(`http://localhost:3001/records/${id}`)
       setRecord(res.data)
-      // console.log(res)
     }
     selectedRecord()
   }, [])
 
   //DELETE one record
-  useEffect(() => {
-    const deleteRecord = async () => {
-      const res = await axios.delete(`http://localhost:3001/records/${id}`)
-      deleteRecord(res.data.records)
-      console.log(res)
-    }
-  }, [])
+  // useEffect(() => {
+  const deleteRecord = async () => {
+    const res = await axios.delete(`http://localhost:3001/records/${id}`)
+    deleteRecord(res.data.records)
+    console.log(res)
+  }
+  // }, [])
 
   //PUT update one record
   const handleSubmit = async (event) => {
@@ -87,7 +86,9 @@ const RecordDetails = (props) => {
             <p></p>
             <button type="submit">Update Record</button>
             <p></p>
-            <button type="delete">Delete Record</button>
+            <button type="delete" onClick={deleteRecord}>
+              Delete Record
+            </button>
             <p></p>
           </form>
           <h3>Artist: {records.artist}</h3>
