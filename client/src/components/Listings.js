@@ -12,6 +12,8 @@ const Listings = () => {
   }
   const [formState, setFormState] = useState(initialState)
 
+  //GET all records
+
   useEffect(() => {
     const getRecords = async () => {
       const res = await axios.get(`http://localhost:3001/records`)
@@ -25,6 +27,8 @@ const Listings = () => {
   const showRecord = (record) => {
     navigate(`listings/${record._id}`)
   }
+
+  //POST create a new record
 
   const handleSubmit = async (event) => {
     event.preventDefault()
