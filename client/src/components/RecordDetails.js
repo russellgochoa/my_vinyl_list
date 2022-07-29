@@ -75,12 +75,16 @@ const RecordDetails = (props) => {
           <form onSubmit={handleSubmit}>
             <label htmlFor="artist">Artist:</label>
             <input type="text" id="artist" onChange={handleChange} />
+            <p></p>
             <label htmlFor="title">Title:</label>
             <input type="text" id="title" onChange={handleChange} />
+            <p></p>
             <label htmlFor="description">Description:</label>
             <input type="text" id="description" onChange={handleChange} />
+            <p></p>
             <label htmlFor="image">Image:</label>
             <input type="text" id="image" onChange={handleChange} />
+            <p></p>
             <button type="submit">Update Record</button>
           </form>
           <h3>Artist: {records.artist}</h3>
