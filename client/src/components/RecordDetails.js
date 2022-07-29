@@ -86,6 +86,9 @@ const RecordDetails = (props) => {
             <input type="text" id="image" onChange={handleChange} />
             <p></p>
             <button type="submit">Update Record</button>
+            <p></p>
+            <button type="delete">Delete Record</button>
+            <p></p>
           </form>
           <h3>Artist: {records.artist}</h3>
         </div>
