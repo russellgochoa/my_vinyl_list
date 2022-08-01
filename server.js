@@ -112,6 +112,7 @@ app.delete('/records/:id', async (req, res) => {
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
 })
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
