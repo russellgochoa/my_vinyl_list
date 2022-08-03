@@ -4,7 +4,7 @@
 
 ### **By: Russell Ochoa**
 
-[LinkedIn](https://www.linkedin.com/in/russell-ochoa-7a2a9516/) | [GitHub](https://github.com/russellgochoa)
+[LinkedIn](https://www.linkedin.com/in/russell-ochoa-7a2a9516/) | [GitHub Repo](https://github.com/russellgochoa/my_vinyl_list) | [My Vinyl List](http://localhost:3000/)
 
 ---
 
