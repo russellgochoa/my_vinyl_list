@@ -24,8 +24,6 @@ const {
 
 const { getAllLists } = require('./controllers/ListController')
 
-// const RecordController = require('./controllers/RecordController')
-
 // ROUTES
 
 // GET Lists
@@ -35,11 +33,6 @@ app.get('/lists', getAllLists)
 // GET records
 
 app.get('/records', getAllRecords)
-
-// app.get('/records', async (req, res) => {
-//   const records = await Record.find({})
-//   res.json(records)
-// })
 
 app.get('/records/:id', async (req, res) => {
   try {
@@ -53,32 +46,9 @@ app.get('/records/:id', async (req, res) => {
   }
 })
 
-// app.get('/', (req, res) => {
-//   res.send('This is root!')
-// })
-
 // POST (create new record)
 
 app.post('/records', createRecord)
-
-// app.post('/records', async (req, res) => {
-//   try {
-//     const newRecord = req.body
-//     console.log(req.body)
-//     const record = new Record(newRecord)
-//     await record.save()
-//     if (!record) throw Error('Record not found')
-//     res.json(record)
-//   } catch (e) {
-//     console.log(e)
-//     res.send('Record not found!')
-//   }
-// })
-
-// app.post('/records', (req, res) => {
-//   console.log(`You've sent a post request to the /hello endpoint.`)
-//   res.send({ msg: 'Thanks for the post!' })
-// })
 
 // PUT (update an existing record)
 
