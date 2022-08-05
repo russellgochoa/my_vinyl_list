@@ -14,7 +14,7 @@ app.use(logger('dev'))
 app.use(express.static(`${__dirname}/client/build`))
 
 const { Record } = require('./models')
-const { List } = require('./models')
+// const { List } = require('./models')
 
 // CONTROLLERS
 const {
@@ -23,8 +23,11 @@ const {
 } = require('./controllers/RecordController')
 
 const { getAllLists } = require('./controllers/ListController')
+const { createList } = require('./controllers/ListController')
 
 // ROUTES
+
+app.put('/lists', createList)
 
 // GET Lists
 

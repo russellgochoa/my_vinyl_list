@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Listings from './components/Listings'
 import RecordDetails from './components/RecordDetails'
+import ListDetails from './components/ListDetails'
 import './App.css'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Listings />} />
             <Route path="listings/:id" element={<RecordDetails />} />
+            <Route path="/lists" element={<ListDetails />} />
           </Routes>
         </main>
       </header>
