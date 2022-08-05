@@ -14,6 +14,15 @@ const ListDetails = (props) => {
     }
     getLists()
   }, [])
+
+  return (
+    <div>
+      <div className="lists">
+        <h2>Havelist</h2>
+        <h2>Wishlist</h2>
+      </div>
+    </div>
+  )
 }
 
 export default ListDetails
