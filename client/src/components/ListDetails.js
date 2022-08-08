@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
@@ -15,12 +15,23 @@ const ListDetails = (props) => {
     getLists()
   }, [])
 
+  let navigate = useNavigate()
+  const showList = (list) => {
+    navigate(`${list._id}`)
+  }
+
   return (
     <div>
-      <div className="lists">
-        <h2>Havelist</h2>
-        <h2>Wishlist</h2>
-      </div>
+      <h2>Lists</h2>
+      <section className="container-grid">
+        {lists
+          ? lists.map((list) => (
+              <div onClick={() => showList(list)} key={list._id}>
+                {list.name}
+              </div>
+            ))
+          : ''}
+      </section>
     </div>
   )
 }
