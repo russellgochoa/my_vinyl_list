@@ -7,7 +7,7 @@ const RecordDetails = (props) => {
   const [records, setRecord] = useState('')
   const [record, Record] = useState('')
 
-  const initialState = {
+  let initialState = {
     title: '',
     artist: '',
     description: '',
@@ -28,6 +28,7 @@ const RecordDetails = (props) => {
     let selectedRecord = async () => {
       let res = await axios.get(`http://localhost:3001/records/${id}`)
       setRecord(res.data)
+      setFormState(res.data)
     }
     selectedRecord()
   }, [])
@@ -36,7 +37,7 @@ const RecordDetails = (props) => {
   // useEffect(() => {
   const deleteRecord = async () => {
     const res = await axios.delete(`http://localhost:3001/records/${id}`)
-    deleteRecord(res.data.records)
+    // deleteRecord(res.data.records)
     console.log(res)
   }
   // }, [])
@@ -45,12 +46,12 @@ const RecordDetails = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let res = await axios.put(`http://localhost:3001/records/${id}`, formState)
-    console.log(res.data)
-    setFormState(initialState)
+    setFormState(res.data)
   }
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
+    console.log(formState)
   }
 
   return records ? (
@@ -72,17 +73,37 @@ const RecordDetails = (props) => {
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <h3>Title: {records.title}</h3>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="artist">Artist:</label>
-            <input type="text" id="artist" onChange={handleChange} />
+            <label htmlFor="artist">Artist: </label>
+            <input
+              type="text"
+              id="artist"
+              value={formState.artist}
+              onChange={handleChange}
+            />
             <p></p>
-            <label htmlFor="title">Title:</label>
-            <input type="text" id="title" onChange={handleChange} />
+            <label htmlFor="title">Title: </label>
+            <input
+              type="text"
+              id="title"
+              value={formState.title}
+              onChange={handleChange}
+            />
             <p></p>
-            <label htmlFor="description">Description:</label>
-            <input type="text" id="description" onChange={handleChange} />
+            <label htmlFor="description">Description: </label>
+            <input
+              type="text"
+              id="description"
+              value={formState.description}
+              onChange={handleChange}
+            />
             <p></p>
             <label htmlFor="image">Image:</label>
-            <input type="text" id="image" onChange={handleChange} />
+            <input
+              type="text"
+              id="image"
+              value={formState.image}
+              onChange={handleChange}
+            />
             <p></p>
             <button type="submit">Update Record</button>
             <p></p>

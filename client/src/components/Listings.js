@@ -60,9 +60,14 @@ const Listings = () => {
           {records
             ? records.map((record) => (
                 <div onClick={() => showRecord(record)} key={record._id}>
-                  {record.title}
-                  {record.artist}
-                  {record.description}
+                  <h4>
+                    {record.artist}
+                    <br />
+                    {record.title}
+                    <br />
+                    {record.description}
+                    <br />
+                  </h4>
                   <img src={record.image} alt={record.title} />
                 </div>
               ))
